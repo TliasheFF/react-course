@@ -1,0 +1,11 @@
+.root {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.dishes {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 5px 0;
+}

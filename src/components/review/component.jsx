@@ -1,12 +1,7 @@
-export const Review = ({ reviews }) => {
+export const Review = ({ review }) => {
   return (
-    <>
-      <h3>Отзывы:</h3>
-      <ul>
-        {reviews.map((item) => (
-          <li key={item.id}>{item.text}</li>
-        ))}
-      </ul>
-    </>
+    <div>
+      <div>{review.text}</div>
+    </div>
   );
 };

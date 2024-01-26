@@ -1,0 +1,19 @@
+.root {
+    border: 1px solid gray;
+    border-radius: 4px;
+    background: SkyBlue;
+    cursor: pointer;
+
+    &:hover {
+        background: rgb(1, 163, 218);
+    }
+
+    &:active {
+        background: rgb(0, 123, 255);
+    }
+
+    &:disabled {
+        background: gray;
+        cursor: not-allowed
+    }
+}
