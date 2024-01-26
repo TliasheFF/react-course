@@ -10,7 +10,7 @@ export const Tabs = ({ restaurants }) => {
     <div className={styles.root}>
       <div>
         {restaurants.map((restaurant) => (
-          <Button className={styles.tabsButton} onClick={() => setActiveTab(restaurant.id)} key={restaurant.id}>
+          <Button className={styles.tabsButton} size="l" onClick={() => setActiveTab(restaurant.id)} key={restaurant.id}>
             {restaurant.name}
           </Button>
         ))}
