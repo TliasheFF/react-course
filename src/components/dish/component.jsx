@@ -9,27 +9,11 @@ export const Dish = ({ dish, className }) => {
   return (
     <div className={classNames(className)}>
       <div>
-        <Button
-          disabled={count === 0}
-          className={styles.dashButton}
-          onClick={() => {
-            if (count > 0) {
-              setCount(count - 1);
-            }
-          }}
-        >
+        <Button disabled={count === 0} className={styles.dishButton} onClick={() => setCount(count - 1)}>
           -
         </Button>
         {count}
-        <Button
-          disabled={count === 5}
-          className={styles.dashButton}
-          onClick={() => {
-            if (count < 5) {
-              setCount(count + 1);
-            }
-          }}
-        >
+        <Button disabled={count === 5} className={styles.dishButton} onClick={() => setCount(count + 1)}>
           +
         </Button>
       </div>

@@ -1,11 +1,10 @@
 import { Menu } from "../menu/component";
 import { Reviews } from "../reviews/component";
 import styles from "./styles.module.scss";
-import classNames from "classnames";
 
-export const Restaurant = ({ restaurant, activeTab, className }) => {
+export const Restaurant = ({ restaurant }) => {
   return (
-    <div className={classNames(styles.root, activeTab === restaurant.id ? className.tabActive : className.tabDefault)}>
+    <div className={styles.root}>
       <h2 className={styles.restaurant_name}>{restaurant.name}</h2>
       <h3>Меню:</h3>
       <Menu className={styles.restaurant_menu} menu={restaurant.menu} />

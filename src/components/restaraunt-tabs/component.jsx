@@ -3,7 +3,7 @@ import { Button } from "../button/component";
 import { Tab } from "../tab/component";
 import styles from "./styles.module.scss";
 
-export const Tabs = ({ restaurants }) => {
+export const RestorauntTabs = ({ restaurants }) => {
   const [activeTab, setActiveTab] = useState(restaurants[0].id);
 
   return (

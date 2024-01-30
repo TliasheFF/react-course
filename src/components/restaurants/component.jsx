@@ -1,10 +1,10 @@
 import { Restaurant } from "../restaurant/component";
 
-export const Restaurants = ({ restaurants, activeTab, className }) => {
+export const Restaurants = ({ restaurants }) => {
   return (
     <div>
       {restaurants.map((restaurant) => (
-        <Restaurant className={className} activeTab={activeTab} restaurant={restaurant} key={restaurant.id} />
+        <Restaurant restaurant={restaurant} key={restaurant.id} />
       ))}
     </div>
   );
