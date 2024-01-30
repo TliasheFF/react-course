@@ -1,13 +1,9 @@
-import { Restaurants } from "../restaurants/component";
+import { Restaurant } from "../restaurant/component";
 
-export const Tab = ({ restaurants, activeTab }) => {
-  const filteredRestaurants = restaurants.filter((restaurant) => {
-    return restaurant.id === activeTab;
-  });
-
+export const Tab = ({ restaurant }) => {
   return (
     <div>
-      <Restaurants restaurants={filteredRestaurants} />
+      <Restaurant restaurant={restaurant} />
     </div>
   );
 };
