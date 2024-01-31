@@ -1,9 +1,8 @@
-import { Restaurant } from "../restaurant/component";
+import { Button } from "../button/component";
+import styles from "./styles.module.scss";
 
-export const Tab = ({ restaurant }) => {
+export const Tab = ({ title, onClick, className }) => {
   return (
-    <div>
-      <Restaurant restaurant={restaurant} />
-    </div>
+    <Button onClick={onClick} size="l" className={styles.tabsButton}>{title}</Button>
   );
 };
