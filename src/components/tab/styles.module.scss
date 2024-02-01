@@ -1,0 +1,11 @@
+.tabsButton {
+    margin: 0 0 5px 5px;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:active {
+        text-decoration: underline;
+    }
+}

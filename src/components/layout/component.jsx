@@ -1,12 +1,13 @@
 import { Footer } from "../footer/component";
 import { Header } from "../header/component";
 import styles from "./styles.module.scss";
+import classNames from "classnames";
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, className }) => {
   return (
     <div className={styles.root}>
       <Header />
-      <div>{children}</div>
+      <div className={classNames(className)}>{children}</div>
       <Footer />
     </div>
   );

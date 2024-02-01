@@ -1,14 +1,11 @@
 import { Layout } from "./components/layout/component";
-import { Restaurant } from "./components/restaurant/component";
-import { restaurants } from "./constants/mock";
+import { RestaurantPage } from "./pages/restaurant-page/component";
 
 export const App = () => {
   return (
-    <Layout>
-      <div className="grid_container">
-        {restaurants.map((restaurant) => (
-          <Restaurant restaurant={restaurant} key={restaurant.id} />
-        ))}
+    <Layout className="layout">
+      <div className="container">
+        <RestaurantPage/>
       </div>
     </Layout>
   );
