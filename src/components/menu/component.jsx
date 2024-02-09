@@ -2,12 +2,12 @@ import { Dish } from "../dish/component";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 
-export const Menu = ({ menu, className }) => {
+export const Menu = ({ menuIds, className }) => {
   return (
     <ul className={classNames(className)}>
-      {menu.map((dish) => (
-        <li key={dish.id}>
-          <Dish className={styles.dishes} dish={dish} />
+      {menuIds.map((id) => (
+        <li key={id}>
+          <Dish className={styles.dishes} dishId={id} />
         </li>
       ))}
     </ul>

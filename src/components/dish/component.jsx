@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Button } from "../button/component";
-import classNames from "classnames";
 import styles from "./styles.module.scss";
+import classNames from "classnames";
+import { useSelector } from "react-redux";
+import { selectDishById } from "../../redux/entities/dish/selectors";
 
-export const Dish = ({ dish, className }) => {
+export const Dish = ({ dishId, className }) => {
+  const dish = useSelector((state) => selectDishById(state, dishId));
   const [count, setCount] = useState(0);
 
   return (
