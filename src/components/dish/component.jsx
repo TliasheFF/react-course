@@ -1,28 +1,52 @@
-import { useState } from "react";
 import { Button } from "../button/component";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
-import { useSelector } from "react-redux";
 import { selectDishById } from "../../redux/entities/dish/selectors";
+import { decrement, increment, selectDishAmountById } from "../../redux/ui/cart";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getDishById } from "../../redux/entities/dish/thunks/get-dishes";
 
 export const Dish = ({ dishId, className }) => {
-  const dish = useSelector((state) => selectDishById(state, dishId));
-  const [count, setCount] = useState(0);
+  const dish = useSelector(selectDishById(dishId));
+  const amount = useSelector((state) => selectDishAmountById(state, dishId));
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getDishById(dishId));
+  }, [dispatch, dishId]);
 
   return (
     <div className={classNames(className)}>
       <div>
-        <Button disabled={count === 0} className={styles.dishButton} onClick={() => setCount(count - 1)}>
+        <Button
+          disabled={amount === 0}
+          className={styles.dishButton}
+          onClick={() => {
+            dispatch(decrement(dishId));
+          }}
+        >
           -
         </Button>
-        {count}
-        <Button disabled={count === 5} className={styles.dishButton} onClick={() => setCount(count + 1)}>
+        {amount}
+        <Button
+          disabled={amount === 5}
+          className={styles.dishButton}
+          onClick={() => {
+            dispatch(increment(dishId));
+          }}
+        >
           +
         </Button>
       </div>
-      <div>
-        {dish.name} - {dish.price}$
-      </div>
+      {dish && (
+        <div>
+          <div>
+            {dish.name} - {dish.price}$
+          </div>
+        </div>
+      )}
     </div>
   );
 };
