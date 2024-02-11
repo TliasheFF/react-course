@@ -19,33 +19,35 @@ export const Dish = ({ dishId, className }) => {
 
   return (
     <div className={classNames(className)}>
-      <div>
-        <Button
-          disabled={amount === 0}
-          className={styles.dishButton}
-          onClick={() => {
-            dispatch(decrement(dishId));
-          }}
-        >
-          -
-        </Button>
-        {amount}
-        <Button
-          disabled={amount === 5}
-          className={styles.dishButton}
-          onClick={() => {
-            dispatch(increment(dishId));
-          }}
-        >
-          +
-        </Button>
-      </div>
-      {dish && (
-        <div>
+      {dish ? (
+        <>
+          <div>
+            <Button
+              disabled={amount === 0}
+              className={styles.dishButton}
+              onClick={() => {
+                dispatch(decrement(dishId));
+              }}
+            >
+              -
+            </Button>
+            {amount}
+            <Button
+              disabled={amount === 5}
+              className={styles.dishButton}
+              onClick={() => {
+                dispatch(increment(dishId));
+              }}
+            >
+              +
+            </Button>
+          </div>
           <div>
             {dish.name} - {dish.price}$
           </div>
-        </div>
+        </>
+      ) : (
+        "Loading..."
       )}
     </div>
   );
