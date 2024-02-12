@@ -3,3 +3,9 @@
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 }
+
+.popupContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+}

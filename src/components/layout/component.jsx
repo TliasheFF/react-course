@@ -12,6 +12,7 @@ export const Layout = ({ children, className }) => {
         <Footer />
       </div>
       <div id="modal-container" />
+      <div className={styles.popupContainer} id="cart-popup" />
     </>
   );
 };
